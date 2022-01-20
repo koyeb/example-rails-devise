@@ -1,0 +1,4 @@
+<h1>Secret Messages</h1>
+<% @messages.each do |message| %>
+  <h4> <%= link_to message.title, secret_message_path(id: message.id) %> </h4>
+<% end %>
