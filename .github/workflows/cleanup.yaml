@@ -1,0 +1,16 @@
+name: Cleanup Koyeb application
+
+on:
+  delete:
+    branches:
+      - '*'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Cleanup Koyeb application
+         uses: koyeb/action-git-deploy/cleanup@v1
+         with:
+           app-name: rails-devise-${{ github.event.ref }}
+           api-token: "${{ secrets.KOYEB_EXAMPLES_APPS_TOKEN }}"
