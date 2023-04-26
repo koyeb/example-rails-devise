@@ -29,7 +29,7 @@ jobs:
         uses: koyeb/action-git-deploy@v1
         with:
           app-name: rails-devise-${{ github.ref_name }}
-          service-env: "DATABASE_URL=@RAILS_DEVISE_DATABASE_URL"
+          service-env: "DATABASE_URL=@RAILS_DEVISE_DATABASE_URL,DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
           service-ports: "3000:http"
           service-routes: "/:3000"
           git-run-command: "rails db:reset && rails db:migrate && rails db:seed && rails server"
