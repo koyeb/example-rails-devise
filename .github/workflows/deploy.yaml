@@ -33,3 +33,4 @@ jobs:
           service-ports: "3000:http"
           service-routes: "/:3000"
           git-run-command: "rails db:reset && rails db:migrate && rails db:seed && rails server"
+          skip-cache: true
